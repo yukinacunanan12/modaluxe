@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>About Us | Moda Luxe PH</title>
+
+<link rel="icon" type="image/jpeg" href="moda-luxe-ph-logo.jpeg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+:root {
+    --cream: #fbf9f5;
+    --background: #f7f3ec;
+    --beige: #eee5d8;
+    --brown: #49382b;
+    --dark: #38291f;
+    --text: #655343;
+    --gold: #b69a7b;
+    --champagne: #d8c2a2;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--background);
+    color: var(--dark);
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    background:
+        radial-gradient(circle at 10% 15%, rgba(213,189,152,.15), transparent 28%),
+        radial-gradient(circle at 90% 70%, rgba(213,189,152,.13), transparent 30%);
+}
+
+/* HEADER - SAME AS COLLECTION PAGE */
+
+header {
+    background: var(--cream);
+    padding: 16px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #d9c9b6;
+    box-shadow: 0 3px 15px rgba(100,75,45,.07);
+}
+
+/* LOGO */
+
+.brand-logo {
+    width: 82px;
+    height: 82px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    flex-shrink: 0;
+    background: #f7f0e7;
+    border: 2px solid #c4a77d;
+
+    box-shadow:
+        0 0 8px rgba(193,157,108,.25),
+        0 0 18px rgba(193,157,108,.18);
+
+    animation: logoGlow 4s ease-in-out infinite;
+}
+
+.brand-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    display: block;
+}
+
+.brand-logo::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -100%;
+    width: 45%;
+    height: 200%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.7),
+        transparent
+    );
+    transform: rotate(25deg);
+    animation: logoShine 5s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes logoGlow {
+    0%, 100% {
+        box-shadow:
+            0 0 8px rgba(193,157,108,.25),
+            0 0 18px rgba(193,157,108,.18);
+    }
+
+    50% {
+        box-shadow:
+            0 0 13px rgba(193,157,108,.45),
+            0 0 25px rgba(193,157,108,.3);
+    }
+}
+
+@keyframes logoShine {
+    0%, 55% {
+        left: -100%;
+    }
+
+    85%, 100% {
+        left: 150%;
+    }
+}
+
+/* NAVIGATION - SAME FONT, COLOR AND BOLDNESS */
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: var(--brown);
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 6px;
+    transition: .3s ease;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--gold);
+    transition: width .3s ease;
+}
+
+nav a:hover,
+nav a.active {
+    color: #987957;
+}
+
+nav a:hover::after,
+nav a.active::after {
+    width: 100%;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 570px;
+    padding: 110px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+
+    background:
+        linear-gradient(rgba(247,243,236,.72), rgba(247,243,236,.88)),
+        radial-gradient(ellipse at center, #e8d9c5, #f7f3ec 70%);
+}
+
+.hero::before,
+.hero::after {
+    content: "✧";
+    position: absolute;
+    color: rgba(161,132,99,.3);
+    font-size: 100px;
+    animation: float 7s ease-in-out infinite;
+}
+
+.hero::before {
+    top: 70px;
+    left: 12%;
+}
+
+.hero::after {
+    bottom: 65px;
+    right: 12%;
+    animation-delay: 2s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(0);
+    }
+
+    50% {
+        transform: translateY(-15px) rotate(12deg);
+    }
+}
+
+.hero-content {
+    max-width: 850px;
+    animation: fadeUp 1.2s ease both;
+}
+
+.eyebrow {
+    color: var(--gold);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 6px;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(65px, 10vw, 115px);
+    line-height: .95;
+    font-weight: 500;
+    letter-spacing: 3px;
+
+    background: linear-gradient(
+        100deg,
+        #70573f,
+        #c6a77c,
+        #8a6c4d,
+        #d5bd98,
+        #70573f
+    );
+
+    background-size: 250% auto;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    animation: goldShimmer 6s linear infinite;
+}
+
+@keyframes goldShimmer {
+    to {
+        background-position: 250% center;
+    }
+}
+
+.hero-line {
+    width: 90px;
+    height: 1px;
+    background: var(--gold);
+    margin: 32px auto;
+    position: relative;
+}
+
+.hero-line::after {
+    content: "✧";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--background);
+    color: var(--gold);
+    padding: 0 12px;
+    font-size: 17px;
+}
+
+.hero p {
+    color: var(--text);
+    font-size: 12px;
+    line-height: 2.2;
+    letter-spacing: 2px;
+    max-width: 650px;
+    margin: auto;
+}
+
+/* GENERAL SECTIONS */
+
+section {
+    padding: 100px 9%;
+}
+
+.section-label {
+    color: #987957;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+}
+
+.section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(42px, 6vw, 65px);
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--brown);
+}
+
+.section-description {
+    color: var(--text);
+    font-size: 13px;
+    line-height: 2.2;
+}
+
+/* INTRODUCTION */
+
+.intro {
+    text-align: center;
+    background: var(--cream);
+}
+
+.intro-content {
+    max-width: 850px;
+    margin: auto;
+}
+
+.intro .section-description {
+    max-width: 720px;
+    margin: 30px auto 0;
+}
+
+/* OUR STORY */
+
+.story {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 85px;
+    align-items: center;
+    background: var(--background);
+}
+
+.story-decoration {
+    min-height: 440px;
+    background: linear-gradient(145deg, #e8ddce, #f5eee4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(161,132,99,.25);
+}
+
+.story-decoration::before {
+    content: "";
+    position: absolute;
+    inset: 18px;
+    border: 1px solid rgba(161,132,99,.35);
+}
+
+.story-decoration::after {
+    content: "";
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 1px solid rgba(161,132,99,.3);
+
+    box-shadow:
+        0 0 0 25px rgba(255,255,255,.12),
+        0 0 0 50px rgba(255,255,255,.08);
+}
+
+.story-monogram {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 160px;
+    font-weight: 500;
+    color: var(--gold);
+    z-index: 1;
+    text-shadow: 0 5px 25px rgba(161,132,99,.2);
+}
+
+.story-text .section-title {
+    max-width: 500px;
+}
+
+/* MISSION AND VISION */
+
+.mission-section {
+    background: var(--cream);
+    text-align: center;
+}
+
+.mission-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 55px;
+}
+
+.info-card {
+    background: #f5efe6;
+    padding: 55px 40px;
+    border: 1px solid rgba(161,132,99,.2);
+    position: relative;
+    overflow: hidden;
+    transition: .5s ease;
+}
+
+.info-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 70%;
+    height: 100%;
+
+    background: linear-gradient(
+        110deg,
+        transparent,
+        rgba(255,255,255,.65),
+        transparent
+    );
+
+    transition: .8s ease;
+}
+
+.info-card:hover::before {
+    left: 150%;
+}
+
+.info-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 18px 40px rgba(73,59,48,.09);
+    border-color: var(--champagne);
+}
+
+.card-symbol {
+    color: var(--gold);
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.info-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 18px;
+    color: var(--brown);
+}
+
+.info-card p {
+    color: var(--text);
+    font-size: 12px;
+    line-height: 2.1;
+}
+
+/* PHILOSOPHY */
+
+.philosophy {
+    text-align: center;
+    background: linear-gradient(135deg, #e9dfd1, #f7f3ec);
+}
+
+.philosophy-content {
+    max-width: 850px;
+    margin: auto;
+}
+
+.philosophy blockquote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(32px, 5vw, 52px);
+    line-height: 1.35;
+    color: var(--brown);
+    margin: 25px 0;
+}
+
+.philosophy p {
+    font-size: 12px;
+    line-height: 2.1;
+    color: var(--text);
+}
+
+/* VALUES */
+
+.values {
+    text-align: center;
+    background: var(--cream);
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 55px;
+}
+
+.value-card {
+    padding: 40px 25px;
+    border-top: 1px solid var(--champagne);
+    transition: .4s ease;
+}
+
+.value-card:hover {
+    background: #f6f0e7;
+    box-shadow: 0 12px 30px rgba(73,59,48,.06);
+}
+
+.value-card span {
+    font-size: 25px;
+    color: var(--gold);
+}
+
+.value-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 29px;
+    font-weight: 700;
+    margin: 18px 0 12px;
+}
+
+.value-card p {
+    color: var(--text);
+    font-size: 11px;
+    line-height: 2;
+}
+
+/* CLOSING */
+
+.closing {
+    text-align: center;
+    background: var(--background);
+    padding: 110px 8%;
+}
+
+.closing .section-title {
+    margin-bottom: 20px;
+}
+
+.closing p {
+    color: var(--text);
+    font-size: 12px;
+    line-height: 2;
+    margin-bottom: 35px;
+}
+
+.button {
+    display: inline-block;
+    padding: 17px 38px;
+    border: 1px solid var(--gold);
+    color: var(--brown);
+    text-decoration: none;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    position: relative;
+    overflow: hidden;
+    transition: .4s ease;
+}
+
+.button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 70%;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.7),
+        transparent
+    );
+
+    transition: .7s ease;
+}
+
+.button:hover::before {
+    left: 150%;
+}
+
+.button:hover {
+    background: var(--brown);
+    color: white;
+    border-color: var(--brown);
+    box-shadow: 0 8px 25px rgba(73,59,48,.15);
+}
+
+/* FOOTER */
+
+footer {
+    background: #eee5d8;
+    padding: 45px 8%;
+    text-align: center;
+    border-top: 1px solid #d9c9b6;
+}
+
+.footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--brown);
+}
+
+footer p {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: var(--text);
+    margin-top: 12px;
+    line-height: 2;
+}
+
+footer a {
+    color: #987957;
+    text-decoration: none;
+}
+
+/* SCROLL ANIMATION */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 850px) {
+
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .story {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .story-decoration {
+        min-height: 330px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    header {
+        padding: 18px 5%;
+    }
+
+    .brand-logo {
+        width: 76px;
+        height: 76px;
+    }
+
+    nav {
+        gap: 18px;
+    }
+
+    nav a {
+        font-size: 9px;
+    }
+
+    .hero {
+        min-height: 480px;
+        padding: 80px 7%;
+    }
+
+    section {
+        padding: 75px 7%;
+    }
+
+    .mission-grid,
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .info-card {
+        padding: 40px 25px;
+    }
+
+    .story-decoration {
+        min-height: 280px;
+    }
+
+    .story-monogram {
+        font-size: 120px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="brand-logo">
+        <img src="logo.png" alt="Moda Luxe PH Logo">
+    </div>
+
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="about.html" class="active">About</a>
+        <a href="collection.html">Collection</a>
+        <a href="contact.html#contact">Contact</a>
+    </nav>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="eyebrow">THE STORY BEHIND THE BRAND</div>
+
+        <h1>About Us</h1>
+
+        <div class="hero-line"></div>
+
+        <p>
+            A closer look into the story, purpose, and inspiration
+            behind Moda Luxe PH.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- INTRODUCTION -->
+
+<section class="intro reveal">
+
+    <div class="intro-content">
+
+        <div class="section-label">WELCOME TO MODA LUXE PH</div>
+
+        <h2 class="section-title">
+            More Than Just a Collection
+        </h2>
+
+        <p class="section-description">
+            Moda Luxe PH is a fashion-inspired website created to showcase
+            elegant and timeless bag collections. It brings together style,
+            sophistication, and the beauty of fashion in one simple and
+            welcoming online space.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- OUR STORY -->
+
+<section class="story">
+
+    <div class="story-decoration reveal">
+        <div class="story-monogram">M</div>
+    </div>
+
+    <div class="story-text reveal">
+
+        <div class="section-label">OUR STORY</div>
+
+        <h2 class="section-title">
+            Made in 2023
+        </h2>
+
+    </div>
+
+</section>
+
+<!-- MISSION AND VISION -->
+
+<section class="mission-section">
+
+    <div class="reveal">
+
+        <div class="section-label">WHAT GUIDES US</div>
+
+        <h2 class="section-title">Our Mission & Vision</h2>
+
+    </div>
+
+    <div class="mission-grid">
+
+        <div class="info-card reveal">
+
+            <div class="card-symbol">✧</div>
+
+            <h3>Our Mission</h3>
+
+            <p>
+                Our mission is to create a beautiful and user-friendly
+                website where visitors can explore bag collections,
+                discover different styles, and enjoy a smooth online
+                browsing experience.
+            </p>
+
+        </div>
+
+        <div class="info-card reveal">
+
+            <div class="card-symbol">◇</div>
+
+            <h3>Our Vision</h3>
+
+            <p>
+                Our vision is to present Moda Luxe PH as a creative
+                fashion platform that celebrates elegance, personal
+                style, and the timeless appeal of beautiful accessories.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- PHILOSOPHY -->
+
+<section class="philosophy reveal">
+
+    <div class="philosophy-content">
+
+        <div class="section-label">OUR PHILOSOPHY</div>
+
+        <blockquote>
+            "Elegance is not about having more.
+            It is about choosing pieces that speak for themselves."
+        </blockquote>
+
+        <p>
+            We believe that fashion is a form of personal expression.
+            A beautiful piece can reflect confidence, individuality,
+            and timeless style.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- VALUES -->
+
+<section class="values">
+
+    <div class="reveal">
+
+        <div class="section-label">WHAT WE BELIEVE IN</div>
+
+        <h2 class="section-title">The Values Behind Our Brand</h2>
+
+    </div>
+
+    <div class="values-grid">
+
+        <div class="value-card reveal">
+            <span>✧</span>
+            <h3>Timeless Appeal</h3>
+            <p>
+                Appreciating styles that remain beautiful beyond
+                changing trends.
+            </p>
+        </div>
+
+        <div class="value-card reveal">
+            <span>◇</span>
+            <h3>Elegance</h3>
+            <p>
+                Celebrating refined details, simplicity, and
+                sophisticated design.
+            </p>
+        </div>
+
+        <div class="value-card reveal">
+            <span>♡</span>
+            <h3>Personal Style</h3>
+            <p>
+                Recognizing that every person has a unique way
+                of expressing themselves.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CLOSING -->
+
+<section class="closing reveal">
+
+    <div class="section-label">DISCOVER THE COLLECTION</div>
+
+    <h2 class="section-title">
+        Find Beauty in Every Detail
+    </h2>
+
+    <p>
+        Explore the collections and discover the style of Moda Luxe PH.
+    </p>
+
+    <a href="collection.html" class="button">VIEW COLLECTION</a>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="footer-logo">MODA LUXE PH</div>
+
+    <p>
+        TIMELESS STYLE. EFFORTLESS ELEGANCE.
+        <br>
+        © 2026 MODA LUXE PH. ALL RIGHTS RESERVED.
+        <br>
+        <a href="mailto:hello@modaluxeph.com">hello@modaluxeph.com</a>
+    </p>
+
+</footer>
+
+<!-- SCROLL ANIMATION -->
+
+<script>
+
+const observer = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+            observer.unobserve(entry.target);
+        }
+
+    });
+
+}, {
+    threshold: 0.12
+});
+
+document.querySelectorAll('.reveal').forEach(element => {
+    observer.observe(element);
+});
+
+</script>
+
+</body>
+</html>
+</html>

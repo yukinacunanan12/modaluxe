@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Collections | Moda Luxe PH</title>
+<link rel="icon" type="image/jpeg" href="moda-luxe-ph-logo.jpeg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --cream: #fbf9f5;
+    --background: #f7f3ec;
+    --beige: #eee5d8;
+    --brown: #49382b;
+    --dark: #38291f;
+    --text: #655343;
+    --gold: #b69a7b;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--background);
+    color: var(--dark);
+}
+
+/* HEADER */
+
+header {
+    background: var(--cream);
+    padding: 16px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #d9c9b6;
+    box-shadow: 0 3px 15px rgba(100,75,45,.07);
+}
+
+.brand-logo {
+    width: 82px;
+    height: 82px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    background: #f7f0e7;
+    border: 2px solid #c4a77d;
+    box-shadow: 0 0 15px rgba(193,157,108,.3);
+    animation: logoGlow 4s ease-in-out infinite;
+}
+
+.brand-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+@keyframes logoGlow {
+    50% {
+        box-shadow: 0 0 25px rgba(193,157,108,.5);
+    }
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: var(--brown);
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: var(--gold);
+}
+
+/* HERO */
+
+.hero {
+    min-height: 390px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 80px 7%;
+    background: linear-gradient(135deg, #f8f4ed, #e9dece);
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 22px;
+    border: 1px solid rgba(182,154,123,.55);
+}
+
+.hero-content {
+    position: relative;
+}
+
+.hero-content span {
+    font-size: 11px;
+    letter-spacing: 5px;
+    color: #987957;
+    font-weight: 700;
+}
+
+.hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(55px, 9vw, 100px);
+    color: var(--brown);
+    letter-spacing: 5px;
+    margin: 15px 0;
+}
+
+.hero p {
+    font-size: 12px;
+    line-height: 2;
+    color: var(--text);
+}
+
+/* CATEGORY NAVIGATION */
+
+.category-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    padding: 30px 15px;
+    background: var(--cream);
+}
+
+.category-links a {
+    text-decoration: none;
+    color: var(--brown);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    padding: 10px 35px;
+    border-bottom: 1px solid var(--gold);
+    transition: .3s;
+}
+
+.category-links a:hover {
+    color: #ad8a62;
+    letter-spacing: 5px;
+}
+
+/* CATEGORY SECTIONS */
+
+.category-section {
+    padding: 85px 7%;
+    text-align: center;
+    border-bottom: 1px solid #d9c9b6;
+}
+
+#bags {
+    background: #f1e9dd;
+}
+
+#wallets {
+    background: #fbf9f5;
+}
+
+.section-label {
+    color: #987957;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    margin-bottom: 15px;
+}
+
+.category-section h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(55px, 7vw, 85px);
+    color: var(--brown);
+    letter-spacing: 8px;
+}
+
+.divider {
+    width: 80px;
+    height: 2px;
+    background: var(--gold);
+    margin: 20px auto;
+}
+
+.section-description {
+    max-width: 650px;
+    margin: 0 auto 50px;
+    color: var(--text);
+    font-size: 12px;
+    line-height: 2;
+}
+
+/* BRAND LOGO GRID */
+
+.brand-grid {
+    max-width: 1150px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.brand-card {
+    height: 155px;
+    background: white;
+    border: 1px solid #e2d6c6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    box-shadow: 0 5px 18px rgba(80,60,40,.06);
+    transition: .4s ease;
+}
+
+.brand-card img {
+    max-width: 85%;
+    max-height: 90px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    transition: .4s ease;
+}
+
+.brand-card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 55%;
+    height: 100%;
+    background: linear-gradient(
+        100deg,
+        transparent,
+        rgba(255,255,255,.8),
+        transparent
+    );
+    transform: skewX(-18deg);
+    transition: left .8s ease;
+}
+
+.brand-card:hover {
+    border-color: var(--gold);
+    box-shadow: 0 10px 30px rgba(100,75,45,.15);
+    transform: translateY(-4px);
+}
+
+.brand-card:hover img {
+    transform: scale(1.07);
+}
+
+.brand-card:hover::after {
+    left: 150%;
+}
+
+/* FOOTER */
+
+footer {
+    padding: 45px 20px;
+    text-align: center;
+    background: #eee5d8;
+    color: #6e5a47;
+    font-size: 11px;
+    line-height: 2;
+    font-weight: 600;
+}
+
+/* ANIMATION */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: 1s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+    .brand-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+
+    header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 18px 5%;
+    }
+
+    nav {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 18px;
+    }
+
+    nav a {
+        font-size: 9px;
+    }
+
+    .hero {
+        min-height: 320px;
+    }
+
+    .hero h1 {
+        font-size: 55px;
+    }
+
+    .category-section {
+        padding: 65px 5%;
+    }
+
+    .brand-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .brand-card {
+        height: 110px;
+        padding: 12px;
+    }
+
+    .brand-card img {
+        max-height: 65px;
+    }
+
+    .category-links {
+        gap: 10px;
+    }
+
+    .category-links a {
+        font-size: 20px;
+        padding: 10px 20px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+</style>
+</head>
+
+<body id="top">
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="brand-logo">
+        <img src="logo.png" alt="Moda Luxe PH Logo">
+    </div>
+
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="collection.html">Collection</a>
+        <a href="contact.html#contact">Contact</a>
+    </nav>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-content">
+        <span>THE MODA LUXE EXPERIENCE</span>
+        <h1>Our Collections</h1>
+        <p>Discover timeless designs and sophisticated pieces.</p>
+    </div>
+
+</section>
+
+<!-- CATEGORY LINKS -->
+
+<div class="category-links">
+    <a href="#bags">BAGS</a>
+    <a href="#wallets">WALLETS</a>
+</div>
+
+<!-- ================= BAGS ================= -->
+
+<section class="category-section reveal" id="bags">
+
+    <p class="section-label">EXPLORE OUR SELECTION</p>
+
+    <h2>BAGS</h2>
+
+    <div class="divider"></div>
+
+    <p class="section-description">
+        Discover our selection of iconic bags from renowned luxury
+        brands. Explore distinctive designs, timeless silhouettes,
+        and elegant pieces for every occasion.
+    </p>
+
+    <div class="brand-grid">
+
+        <a href="gucci-bags.html" class="brand-card">
+            <img src="gucci-logo.jpeg" alt="Gucci">
+        </a>
+
+        <a href="lv-bags.html" class="brand-card">
+            <img src="lv-logo.jpeg" alt="Louis Vuitton">
+        </a>
+
+        <a href="dior-bags.html" class="brand-card">
+            <img src="dior-logo.jpeg" alt="Dior">
+        </a>
+
+        <a href="goyard-bags.html" class="brand-card">
+            <img src="goyard-logo.jpeg" alt="Goyard">
+        </a>
+
+        <a href="burberry-bags.html" class="brand-card">
+            <img src="burberry-logo.jpeg" alt="Burberry">
+        </a>
+
+        <a href="balenciaga-bags.html" class="brand-card">
+            <img src="balenciaga-logo.jpeg" alt="Balenciaga">
+        </a>
+
+        <a href="hermes-bags.html" class="brand-card">
+            <img src="hermes-logo.jpeg" alt="Hermes">
+        </a>
+
+        <a href="ysl-bags.html" class="brand-card">
+            <img src="ysl-logo.jpeg" alt="YSL">
+        </a>
+
+        <a href="loewe-bags.html" class="brand-card">
+            <img src="loewe-logo.jpeg" alt="Loewe">
+        </a>
+
+    </div>
+
+</section>
+
+<!-- ================= WALLETS ================= -->
+
+<section class="category-section reveal" id="wallets">
+
+    <p class="section-label">EXPLORE OUR SELECTION</p>
+
+    <h2>WALLETS</h2>
+
+    <div class="divider"></div>
+
+    <p class="section-description">
+        Explore elegant wallets featuring beautiful craftsmanship,
+        practical designs, and distinctive details from our
+        selected luxury brands.
+  
+    <div class="brand-grid">
+
+
+        <a href="lv-wallets.html" class="brand-card">
+            <img src="lv-logo.jpeg" alt="Louis Vuitton">
+        </a>
+
+        <a href="dior-wallets.html" class="brand-card">
+            <img src="dior-logo.jpeg" alt="Dior">
+        </a>
+
+        <a href="goyard-wallets.html" class="brand-card">
+            <img src="goyard-logo.jpeg" alt="Goyard">
+        </a>
+ <a href="chanel.html" class="brand-card">
+            <img src="chanel-logo.png" alt="Goyard">
+        </a>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+    <p>MODA LUXE PH</p>
+    <p>Timeless pieces. Effortless elegance.</p>
+    <p>© 2026 Moda Luxe PH. All rights reserved.</p>
+</footer>
+
+<!-- SCROLL ANIMATION -->
+
+<script>
+
+const revealElements = document.querySelectorAll(".reveal");
+
+const observer = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+        }
+
+    });
+
+}, {
+    threshold: 0.10
+});
+
+revealElements.forEach(element => {
+    observer.observe(element);
+});
+
+</script>
+
+</body>
+</html>
+</html>
